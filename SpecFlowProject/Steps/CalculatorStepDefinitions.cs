@@ -1,4 +1,6 @@
-﻿using TechTalk.SpecFlow;
+﻿using System.Net;
+using NUnit.Framework;
+using TechTalk.SpecFlow;
 
 namespace SpecFlowProject.Steps
 {
@@ -15,7 +17,7 @@ namespace SpecFlowProject.Steps
             _scenarioContext = scenarioContext;
         }
 
-        [Given("the first number is (.*)")]
+        [Given("the first score is (.*)")]
         public void GivenTheFirstNumberIs(int number)
         {
             //TODO: implement arrange (precondition) logic
@@ -23,11 +25,10 @@ namespace SpecFlowProject.Steps
             // To use the multiline text or the table argument of the scenario,
             // additional string/Table parameters can be defined on the step definition
             // method. 
-
-            _scenarioContext.Pending();
+            _scenarioContext.Set(number,"FirstScore");
         }
 
-        [Given("the second number is (.*)")]
+        [Given("the second score is (.*)")]
         public void GivenTheSecondNumberIs(int number)
         {
             //TODO: implement arrange (precondition) logic
@@ -36,23 +37,32 @@ namespace SpecFlowProject.Steps
             // additional string/Table parameters can be defined on the step definition
             // method. 
 
-            _scenarioContext.Pending();
+            _scenarioContext.Set(number, "SecondScore");
         }
 
-        [When("the two numbers are added")]
+        [When("get the score display")]
         public void WhenTheTwoNumbersAreAdded()
         {
-            //TODO: implement act (action) logic
-
-            _scenarioContext.Pending();
+            var firstScore = _scenarioContext.Get<int>("FirstScore");
+            var secondScore = _scenarioContext.Get<int>("SecondScore");
+            string scoreDisplay = TennisHelper.GetScoreDisplay(firstScore,secondScore);
+            _scenarioContext.Set(scoreDisplay,"ScoreDisplay");
         }
 
         [Then("the result should be (.*)")]
-        public void ThenTheResultShouldBe(int result)
+        public void ThenTheResultShouldBe(string result)
         {
             //TODO: implement assert (verification) logic
+            string scoreDisplay = _scenarioContext.Get<string>("ScoreDisplay");
+            Assert.AreEqual(result , scoreDisplay);
+        }
+    }
 
-            _scenarioContext.Pending();
+    public static class TennisHelper
+    {
+        public static string GetScoreDisplay(int firstScore, int secondScore)
+        {
+            return "Love All";
         }
     }
 }
