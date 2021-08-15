@@ -13,9 +13,20 @@
                 }
                
             }
-            else
-            {
-                result = "Fifteen Love";
+            else {
+                switch (firstScore)
+                {
+                    case 1:
+                        result = "Fifteen Love";
+                        break;
+                    case 2:
+                        result = "Thirty Love";
+                        break;
+                    case 3:
+                        result = "Forty Love";
+                        break;
+                }
+                
             }
 
             return result;

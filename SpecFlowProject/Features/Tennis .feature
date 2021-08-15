@@ -17,3 +17,16 @@ Scenario: 1:0
 	And the second score is 0
 	When get the score display
 	Then the result should be Fifteen Love
+
+Scenario: 2:0 
+	Given the first score is 2
+	And the second score is 0
+	When get the score display
+	Then the result should be Thirty Love
+
+Scenario: 3:0 
+	Given the first score is 3
+	And the second score is 0
+	When get the score display
+	Then the result should be Forty Love
+
