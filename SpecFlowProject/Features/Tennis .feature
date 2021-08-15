@@ -30,3 +30,21 @@ Scenario: 3:0
 	When get the score display
 	Then the result should be Forty Love
 
+Scenario: 0:1 
+	Given the first score is 0
+	And the second score is 1
+	When get the score display
+	Then the result should be Love Fifteen
+
+Scenario: 0:2 
+	Given the first score is 0
+	And the second score is 2
+	When get the score display
+	Then the result should be Love Thirty
+
+Scenario: 0:3 
+	Given the first score is 0
+	And the second score is 3
+	When get the score display
+	Then the result should be Love Forty
+

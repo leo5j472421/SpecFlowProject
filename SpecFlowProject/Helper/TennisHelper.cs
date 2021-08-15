@@ -7,9 +7,21 @@
             var result = "";
             if (firstScore == 0 )
             {
-                if (secondScore ==0)
+                
+                switch(secondScore)
                 {
-                    result = "Love All";
+                    case 0:
+                        result = "Love All";
+                        break;
+                    case 1:
+                        result = "Love Fifteen";
+                        break;
+                    case 2:
+                        result = "Love Thirty";
+                        break;
+                    case 3:
+                        result = "Love Forty";
+                        break;
                 }
                
             }
