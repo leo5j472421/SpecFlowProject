@@ -48,3 +48,27 @@ Scenario: 0:3
 	When get the score display
 	Then the result should be Love Forty
 
+Scenario: 1:1 
+	Given the first score is 1
+	And the second score is 1
+	When get the score display
+	Then the result should be Fifteen All
+
+Scenario: 2:2 
+	Given the first score is 2
+	And the second score is 2
+	When get the score display
+	Then the result should be Thirty All
+
+Scenario: 3:3 
+	Given the first score is 3
+	And the second score is 3
+	When get the score display
+	Then the result should be Deuce
+
+Scenario: 4:4 
+	Given the first score is 4
+	And the second score is 4
+	When get the score display
+	Then the result should be Deuce
+

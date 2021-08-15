@@ -5,7 +5,25 @@
         public static string GetScoreDisplay(int firstScore, int secondScore)
         {
             var result = "";
-            if (firstScore == 0 )
+            if (firstScore == secondScore)
+            {
+                switch (secondScore)
+                {
+                    case 0:
+                        result = "Love All";
+                        break;
+                    case 1:
+                        result = "Fifteen All";
+                        break;
+                    case 2:
+                        result = "Thirty All";
+                        break;
+                    default:
+                        result = "Deuce";
+                        break;
+                }
+            }
+            else if (firstScore == 0 )
             {
                 
                 switch(secondScore)
