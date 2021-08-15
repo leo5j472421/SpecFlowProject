@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using NUnit.Framework;
+using SpecFlowProject.Helper;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowProject.Steps
@@ -55,14 +56,6 @@ namespace SpecFlowProject.Steps
             //TODO: implement assert (verification) logic
             string scoreDisplay = _scenarioContext.Get<string>("ScoreDisplay");
             Assert.AreEqual(result , scoreDisplay);
-        }
-    }
-
-    public static class TennisHelper
-    {
-        public static string GetScoreDisplay(int firstScore, int secondScore)
-        {
-            return "Love All";
         }
     }
 }
