@@ -72,3 +72,26 @@ Scenario: 4:4
 	When get the score display
 	Then the result should be Deuce
 
+Scenario: 4:3
+	Given the first score is 4
+	And the second score is 3
+	When get the score display
+	Then the result should be Player A Adv
+
+Scenario: 5:3 
+	Given the first score is 5
+	And the second score is 3
+	When get the score display
+	Then the result should be Player A Win
+
+Scenario: 4:5
+	Given the first score is 3
+	And the second score is 4
+	When get the score display
+	Then the result should be Player B Adv
+
+Scenario: 3:5 
+	Given the first score is 3
+	And the second score is 5
+	When get the score display
+	Then the result should be Player B Win

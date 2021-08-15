@@ -1,4 +1,6 @@
-﻿namespace SpecFlowProject.Helper
+﻿using System.Net;
+
+namespace SpecFlowProject.Helper
 {
     public static class TennisHelper
     {
@@ -43,7 +45,7 @@
                 }
                
             }
-            else {
+            else if (secondScore == 0) {
                 switch (firstScore)
                 {
                     case 1:
@@ -57,6 +59,17 @@
                         break;
                 }
                 
+            }
+            else
+            {
+                if (firstScore > secondScore)
+                {
+                    result = firstScore - secondScore == 1 ? "Player A Adv" : "Player A Win";
+                }
+                else
+                {
+                    result = secondScore - firstScore  == 1 ? "Player B Adv" : "Player B Win";
+                }
             }
 
             return result;
